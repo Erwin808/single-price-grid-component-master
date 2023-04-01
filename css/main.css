@@ -1,0 +1,119 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --Light-Gray: hsl(204, 43%, 93%);
+    --Grayish-Blue: hsl(218, 22%, 67%);
+    --Cyan: hsl(179, 62%, 43%);
+    --Bright-Yellow: hsl(71, 73%, 54%);
+}
+body {
+    font-family: 'Karla', sans-serif;
+    background-color: var(--Light-Gray);
+}
+.container {
+    width: 700px;
+    height: 450px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% ,-50%);
+    display: grid;
+    grid-template: 200px 250px/350px 350px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.container div {
+    padding: 50px 40px;
+}
+.box1 {
+    background-color: white;
+    grid-column: 1/3;
+}
+.box2 {
+    background-color: var(--Cyan);
+}
+.box3 {
+    background-color: var(--Cyan);
+    opacity: 0.9;
+}
+.box1 p:first-of-type {
+    font-size: x-large;
+    color: var(--Cyan);
+    font-weight: 700;
+}
+.box1 p:nth-of-type(2) {
+    font-size: large;
+    color: var(--Bright-Yellow);
+    margin: 20px 0 10px;
+    font-weight: 400;
+}
+.box1 p:last-of-type {
+    color: var(--Grayish-Blue);
+    opacity: 0.8;
+}
+.box2 p {
+    color: white;
+}
+.one {
+    font-size: xx-large;
+    font-weight: 700;
+}
+.tow {
+    opacity: 0.7;
+}
+.box2 :nth-child(2) {
+    font-size: small;
+    margin: 20px 0 10px;
+}
+.box2 p:last-of-type {
+    opacity: 0.8;
+}
+.box2 button {
+    width: 240px;
+    height: 50px;
+    background-color: var(--Bright-Yellow);
+    color: white;
+    font-weight: 700;
+    border: none;
+    margin-top: 20px;
+    border-radius: 5px;
+}
+.box3 p:first-of-type {
+    font-size: larger;
+    font-weight: 400;
+    margin-bottom: 15px;
+    opacity: 1;
+}
+.box3 p {
+    color: white;
+    font-size: small;
+    margin-bottom: 5px;
+    opacity: 0.8;
+}
+/* Mobile screen */
+@media (max-width: 427px ) {
+    .container {
+        max-width: 350px;
+        min-height: 800px;
+        grid-template: repeat(3 ,1fr) / 350px;
+        position: static;
+        transform: translate(0 ,0);
+        margin: 10px auto;
+    }
+    .container div {
+        padding: 40px 30px;
+    }
+    .container div:first-child {
+        grid-column: 1/2;
+    }
+    .box2 button {
+        width: 290px;
+    }
+    .box1 p:last-of-type {
+        width: 305px;
+        line-height: 1.6;
+    }
+}
